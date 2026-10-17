@@ -42,7 +42,6 @@ substitutions:
   temp_unit: "°C"    #set climate unit, use "°C" or "°F"
   tx_pin_esp: '1'    #TX pin on esp module
   rx_pin_esp: '3'    #RX pin on esp module
-  #heat_on_cmd: "F001" #optional: force the ignition command if your stove beeps but does not start (default "auto" = based on firmware)
 
 packages:
   duepi:

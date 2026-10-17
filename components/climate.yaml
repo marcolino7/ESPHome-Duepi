@@ -1,9 +1,3 @@
-# Default substitutions for this package; values set in the main yaml take precedence.
-#   heat_on_cmd: "auto" = pick the ignition command from the detected firmware,
-#   otherwise force a fixed command (e.g. "F001") for stoves that reject the default one.
-substitutions:
-  heat_on_cmd: "auto"
-
 climate:
   - platform: thermostat
     on_boot_restore_from: memory
@@ -106,8 +100,7 @@ climate:
                         command_in: !lambda |-
                           id(debug).publish_state("Heat On");
                           id(uart_send) = 9;
-                          std::string str = "${heat_on_cmd}";
-                          if (str != "auto") { return str; }
+                          std::string str;
                           if (id(firmware) == "9200") { str="F005"; }
                           else if (id(firmware) == "E670") { str="F006"; }
                           else if (id(firmware) == "E693") { str="F006"; }

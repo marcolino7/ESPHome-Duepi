@@ -77,10 +77,7 @@ substitutions:
   temp_unit: "°C"    #set climate unit, use "°C" or "°F"
   tx_pin_esp: '1'    #TX pin on esp module
   rx_pin_esp: '3'    #RX pin on esp module
-  #heat_on_cmd: "F001" #optional, see below
 ```
-If the stove beeps when you set the climate to Heat but does not start, the ignition command chosen for your firmware is probably not accepted by your board (e.g. some V100 boards accept `F001` but not `F006`). Test the codes `F001`..`F006` with the custom command action and, once you find the one that starts your stove, set it with the optional `heat_on_cmd` substitution. The default `"auto"` keeps the firmware based selection.
-
 Compile and install on the Wemos. Connect the correct pins of the Wemos to the DEUPI board:
 ![image](https://github.com/user-attachments/assets/2958a20d-82da-41a6-a7fe-a692134b9652)
 ![image](https://github.com/user-attachments/assets/4cef9ac5-132b-4bb8-838a-5a8e09bb705e)
